@@ -38,4 +38,10 @@ public class SinhVien {
     public String getAddress() {
         return address;
     }
+    public void printInfo(){
+        System.out.println(name);
+        System.out.println(age);
+        System.out.println(address);
+        System.out.println(className);
+    }
 }
