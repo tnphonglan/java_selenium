@@ -1,10 +1,11 @@
-package phamvitruycap;
+package vietmap;
 
-public class Information {
+import phamvitruycap.Employer;
+
+public class akaAT {
     public static void main(String[] args) {
         Employer employer = new Employer();
-        employer.getInfoProtected();
-        employer.getInfoDefault();
+        System.out.println(employer.company);
         System.out.println(employer.getName());
         System.out.println(employer.getCompany());
     }
