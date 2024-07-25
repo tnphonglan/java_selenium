@@ -13,6 +13,7 @@ public class NhanVien {
     }
 
     public int getTuoi() {
+
         return Tuoi;
     }
 
