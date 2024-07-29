@@ -2,7 +2,7 @@ package objectclass;
 
 import java.util.ArrayList;
 
-public class company {
+public class  company {
     public static void main(String[] args) {
 
         // Khởi tạo đối tượng class SinhVien
