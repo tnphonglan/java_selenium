@@ -7,5 +7,8 @@ public class ThongTin {
         System.out.println(nv1.getTuoi());
         System.out.println(nv1.getChucVu());
 
+       nv1.getThongTinNhanVien();
+
     }
+
 }

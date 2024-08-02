@@ -2,11 +2,12 @@ package BT_JavaOOP_2.person;
 
 public class Information {
     public static void main(String[] args) {
-        Person person = new Person("Lan",33, "Nữ", "HCM", "0977469144");
-        System.out.println(person.getName());
-        System.out.println(person.getAge());
-        System.out.println(person.getGender());
-        System.out.println(person.getAddress());
-        System.out.println(person.getPhone());
+        Person person1 = new Person("Lan",33, "Nữ", "HCM", "0977469144");
+        Person person2 = new Person("Minh",33, "Nam", "HN", "0977548976");
+
+
+        person1.getThongTinNhanVien();
+        System.out.println("******************");
+        person2.getThongTinNhanVien();
     }
 }
