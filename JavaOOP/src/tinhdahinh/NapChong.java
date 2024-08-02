@@ -1,6 +1,6 @@
 package tinhdahinh;
 
-public class NapChong {
+public class NapChong extends Acction{
 
     //Khai báo nhiều hàm tên giống nhau nhưng kha nhau về tham Số
 
@@ -33,7 +33,7 @@ public class NapChong {
 
     public static void main(String[] args) {
         NapChong napChong = new NapChong();
-        napChong.getInfo("Anh Tester", "Cần Thơ");
+        napChong.getInfo();
     }
 
 }

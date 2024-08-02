@@ -5,8 +5,19 @@ public class GhiDe extends Acction{
     //Hàm của class con giống với tên hàm của class cha
 
 
-    @Override
     public void clickElement() {
-        super.clickElement();
+        System.out.println("click on button Login");
+    }
+
+    public void login(){
+        System.out.println("https://anhtester.com");
+        System.out.println("Email: abc@gmail.com");
+        System.out.println("password: 123456");
+        clickElement();
+    }
+
+    public static void main(String[] args) {
+        GhiDe ghiDe = new GhiDe();
+        ghiDe.login();
     }
 }
