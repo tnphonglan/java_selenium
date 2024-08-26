@@ -19,7 +19,7 @@ public class AddCategoryXpathTuyetDoi {
         driver.get("https://cms.anhtester.com/login");
         driver.findElement(By.id("email")).sendKeys("admin@example.com");
         driver.findElement(By.name("password")).sendKeys("123456");
-        driver.findElement(By.tagName("button")).click();
+        driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
         Thread.sleep(2000); //Chờ đợi 2 giây
 
 
