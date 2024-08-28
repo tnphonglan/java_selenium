@@ -39,7 +39,7 @@ public class LocatorsCRM {
     public static String dropdownCountry = "//button[@data-id='country']";
     public static String inputSearchCountry = "//div[@app-field-wrapper='country']//input";
     public static String buttonSaveAndCreateContact = "//button[normalize-space()='Save and create contact']";
-    public static String buttonSave = "//div[@id='profile-save-section']//button[normalize-space()='Save']";
+    public static String buttonSaveCustomer = "//div[@id='profile-save-section']//button[normalize-space()='Save']";
 
 
     //Trang Project List
@@ -63,7 +63,7 @@ public class LocatorsCRM {
     public static String dropdownTags = "//label[normalize-space()='Tags']/following-sibling::ul";
     public static String inputDescription = "//div[@id='mceu_15-body']/descendant::div[@id='mceu_34']";
     public static String checkboxSendProject = "//div[@id='tab_project']/descendant::div//input[@id='send_created_email']";
-    public static String buttonSave = "//button[normalize-space()='Save']";
+    public static String buttonSaveProject = "//button[normalize-space()='Save']";
 
 }
 
