@@ -55,11 +55,14 @@ public class LocatorsCRM {
     public static String sliderProject = "//span[@class='label_progress']/following::div[contains(@class,'project_progress')]";
     public static String dropdownBillingType = "//label[text()='Billing Type']/following-sibling::div";
     public static String dropdownStatus = "//label[normalize-space()='Status']/following-sibling::div";
+    public static String inputRatePerHour = "//label[normalize-space()='Rate Per Hour']//following-sibling::input";
     public static String inputEstimatedHours = "//label[normalize-space()='Estimated Hours']/following-sibling::input";
     public static String dropdownMembers = "//label[normalize-space()='Members']/following-sibling::div";
     public static String inputSearchMembers = "//button[@title='Admin Example']/following-sibling::div//input";
-    public static String buttonSelectAll = "//button[@title='Admin Example']/following-sibling::div//button[normalize-space()='Select All']";
-    public static String buttonDeselectAll = "//button[@title='Admin Example']/following-sibling::div//button[normalize-space()='Deselect All']";
+    public static String buttonSelectAllMember = "//button[@title='Admin Example']/following-sibling::div//button[normalize-space()='Select All']";
+    public static String buttonDeselectAllMember = "//button[@title='Admin Example']/following-sibling::div//button[normalize-space()='Deselect All']";
+    public static String inputStartDate = "//label[@for='start_date']/following-sibling::div//input";
+    public static String inputDeadline = "//label[normalize-space()='Deadline']/following-sibling::div//input";
     public static String dropdownTags = "//label[normalize-space()='Tags']/following-sibling::ul";
     public static String inputDescription = "//div[@id='mceu_15-body']/descendant::div[@id='mceu_34']";
     public static String checkboxSendProject = "//div[@id='tab_project']/descendant::div//input[@id='send_created_email']";

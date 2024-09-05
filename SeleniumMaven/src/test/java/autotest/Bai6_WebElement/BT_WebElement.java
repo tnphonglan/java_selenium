@@ -16,12 +16,12 @@ public class BT_WebElement {
 
         driver.get("https://crm.anhtester.com/admin/clients");
 
-         driver.findElement(By.xpath(LocatorsCRM.inputEmail)).sendKeys("admin@example.com");
-         driver.findElement(By.xpath(LocatorsCRM.inputPassword)).sendKeys("123456");
-         driver.findElement(By.xpath(LocatorsCRM.buttonLogin)).click();
+        driver.findElement(By.xpath(LocatorsCRM.inputEmail)).sendKeys("admin@example.com");
+        driver.findElement(By.xpath(LocatorsCRM.inputPassword)).sendKeys("123456");
+        driver.findElement(By.xpath(LocatorsCRM.buttonLogin)).click();
 
-         driver.findElement(By.xpath(LocatorsCRM.menuCustomers)).click();
-         driver.findElement(By.xpath(LocatorsCRM.buttonAddNewCustomers)).click();
+        driver.findElement(By.xpath(LocatorsCRM.menuCustomers)).click();
+        driver.findElement(By.xpath(LocatorsCRM.buttonAddNewCustomers)).click();
 
          //Add new customer
         driver.findElement(By.xpath(LocatorsCRM.inputCompany)).sendKeys("Company");
@@ -29,9 +29,12 @@ public class BT_WebElement {
         driver.findElement(By.xpath(LocatorsCRM.inputPhone)).sendKeys("12345678");
         driver.findElement(By.xpath(LocatorsCRM.inputWebsite)).sendKeys("https://anhtester.com/");
         driver.findElement(By.xpath(LocatorsCRM.dropdownGroups)).click();
-        driver.findElement(By.xpath(LocatorsCRM.inputSearchGroup)).sendKeys("Automation");
+        driver.findElement(By.xpath(LocatorsCRM.dropdownGroups)).click();
+        //driver.findElement(By.xpath(LocatorsCRM.inputSearchGroup)).sendKeys("Automation");
         driver.findElement(By.xpath(LocatorsCRM.dropdownCurrency)).click();
-        driver.findElement(By.xpath(LocatorsCRM.inputSearchCurrency)).sendKeys("USD");
+        driver.findElement(By.xpath(LocatorsCRM.dropdownCurrency)).click();
+        //driver.findElement(By.xpath(LocatorsCRM.inputSearchCurrency)).sendKeys("USD");
+        driver.findElement(By.xpath(LocatorsCRM.dropdownLanguage)).click();
         driver.findElement(By.xpath(LocatorsCRM.dropdownLanguage)).click();
         driver.findElement(By.xpath(LocatorsCRM.inputAddress)).sendKeys("197 Trần Phú");
         driver.findElement(By.xpath(LocatorsCRM.inputCity)).sendKeys("Hồ Chí Minh");
@@ -39,9 +42,10 @@ public class BT_WebElement {
         driver.findElement(By.xpath(LocatorsCRM.inputZipCode)).sendKeys("123");
         driver.findElement(By.xpath(LocatorsCRM.buttonSaveCustomer)).click();
         driver.findElement(By.xpath(LocatorsCRM.dropdownCountry)).click();
-        driver.findElement(By.xpath(LocatorsCRM.inputSearchCountry)).sendKeys("Vietnam");
+        driver.findElement(By.xpath(LocatorsCRM.dropdownCountry)).click();
+        //driver.findElement(By.xpath(LocatorsCRM.inputSearchCountry)).sendKeys("Vietnam");
 
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         driver.quit();
     }
 }
