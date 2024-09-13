@@ -28,7 +28,9 @@ public class BT_WebElement {
         driver.findElement(By.xpath(LocatorsCRM.inputVAT)).sendKeys("8");
         driver.findElement(By.xpath(LocatorsCRM.inputPhone)).sendKeys("12345678");
         driver.findElement(By.xpath(LocatorsCRM.inputWebsite)).sendKeys("https://anhtester.com/");
+
         driver.findElement(By.xpath(LocatorsCRM.dropdownGroups)).click();
+
         driver.findElement(By.xpath(LocatorsCRM.dropdownGroups)).click();
         //driver.findElement(By.xpath(LocatorsCRM.inputSearchGroup)).sendKeys("Automation");
         driver.findElement(By.xpath(LocatorsCRM.dropdownCurrency)).click();
