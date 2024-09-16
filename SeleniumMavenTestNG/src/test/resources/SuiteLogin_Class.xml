@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Regression Test" verbose="1">
+    <test name="Login Test CRM">
+        <classes>
+            <class name="Automation.Bai9_TestNGFramework.DemoTestNG" />
+            <class name="Automation.Bai9_TestNGFramework.LoginTest1" />
+            <class name="Automation.Bai9_TestNGFramework.LoginTest2" />
+        </classes>
+    </test>
+</suite>
