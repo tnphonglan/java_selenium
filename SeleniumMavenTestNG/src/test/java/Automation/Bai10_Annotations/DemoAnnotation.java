@@ -1,8 +1,9 @@
 package Automation.Bai10_Annotations;
 
+import Automation.common.BaseTestDependency;
 import org.testng.annotations.*;
 
-public class DemoAnnotation {
+public class DemoAnnotation extends BaseTestDependency {
      
     @BeforeSuite
     public void beforeSuite() {

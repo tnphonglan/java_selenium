@@ -1,5 +1,6 @@
 package Automation.Bai9_TestNGFramework;
 
+import Automation.common.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class LoginTest2 {
+public class LoginTest2 extends BaseTest {
 
     WebDriver driver;
     @BeforeMethod
