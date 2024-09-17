@@ -26,7 +26,7 @@ public class LoginTest1 {
         driver.quit();
     }
 
-    @Test
+    @Test(priority = 3)
     public void testLoginCRM_Success(){
         driver.get("https://crm.anhtester.com/admin/authentication");
         driver.findElement(By.xpath("//input[@id='email']")).sendKeys("admin@example.com");
@@ -35,7 +35,7 @@ public class LoginTest1 {
 
     }
 
-    @Test
+    @Test(priority = 1)
     public void testCustomer_withEmailInvalid(){
         driver.get("https://crm.anhtester.com/admin/authentication");
         driver.findElement(By.xpath("//input[@id='email']")).sendKeys("admin123@example.com");
@@ -46,7 +46,7 @@ public class LoginTest1 {
 
     }
 
-    @Test
+    @Test(priority = 2)
     public void testCustomer_withPasswordInvalid(){
         driver.get("https://crm.anhtester.com/admin/authentication");
         driver.findElement(By.xpath("//input[@id='email']")).sendKeys("admin@example.com");
