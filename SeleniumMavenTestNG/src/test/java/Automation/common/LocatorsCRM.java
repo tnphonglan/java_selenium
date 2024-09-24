@@ -21,6 +21,7 @@ public class LocatorsCRM {
     public static String buttonContacts = "//a[contains(@href,'all_contacts')]";    //Cách 2: "//a[normalize-space()='Import Customers']/following-sibling::a[normalize-space()='Contacts']"
     public static String headerCustomerPage = "//span[normalize-space()='Customers Summary']";
     public static String buttonSearchCustomers = "//div[@id='clients_filter']//input[@aria-controls='clients']";
+    public static String firstItemCustomerOnTable = "//tr[@class='has-row-options odd']//td[@class='sorting_1']/a";
 
     //Add new customers
     public static String inputCompany = "//input[@id='company']";
@@ -40,6 +41,27 @@ public class LocatorsCRM {
     public static String inputSearchCountry = "//div[@app-field-wrapper='country']//input";
     public static String buttonSaveAndCreateContact = "//button[normalize-space()='Save and create contact']";
     public static String buttonSaveCustomer = "//div[@id='profile-save-section']//button[normalize-space()='Save']";
+
+    //Trang Add new customer contact
+    public static String menuContacts = "//a[normalize-space()='Contacts']";
+    public static String headerContactPage = "//h4[normalize-space()='Contacts']";
+    public static String buttonAddNewContact = "//a[normalize-space()='New Contact']";
+    public static String inputSearchContacts = "//input[@class='form-control input-sm']";
+    public static String headerAddNewContactDialog = "//h4[normalize-space()='Add new contact']";
+    public static String inputProfileImage = "//input[@id='profile_image']";
+    public static String inputFirstName = "//input[@id='firstname']";
+    public static String inputLastName = "//input[@id='lastname']";
+    public static String inputPosition = "//input[@id='title']";
+    public static String inputEmailContact = "//input[@id='email']";
+    public static String inputPhoneContact = "//input[@id='phonenumber']";
+    public static String buttonGeneratePassword = "//a[@class='generate_password']";
+    public static String buttonShowPassword = "//a[@class='show_password']";
+    public static String inputPasswordContact = "//input[@name='password']";
+    public static String checkboxDoNotSendEmail = "//input[@id='donotsendwelcomeemail']";
+    public static String buttonSaveContact = "//form[@id='contact-form']//button[normalize-space()='Save']";
+    public static String buttonCloseAddNewContact = "//form[@id='contact-form']//button[normalize-space()='Close']";
+    public static String firstItemContactOnTable = "//td[@class='sorting_1']/a";
+
 
 
     //Trang Project List
@@ -67,4 +89,5 @@ public class LocatorsCRM {
     public static String inputDescription = "//div[@id='mceu_15-body']/descendant::div[@id='mceu_34']";
     public static String checkboxSendProject = "//div[@id='tab_project']/descendant::div//input[@id='send_created_email']";
     public static String buttonSaveProject = "//button[normalize-space()='Save']";
+
 }
