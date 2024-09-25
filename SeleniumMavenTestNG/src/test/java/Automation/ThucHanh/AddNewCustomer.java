@@ -100,8 +100,6 @@ public class AddNewCustomer extends BaseTest {
         sleep(2);
         Assert.assertTrue(driver.findElement(By.xpath(LocatorsCRM.firstItemContactOnTable)).isDisplayed());
         Assert.assertEquals(driver.findElement(By.xpath(LocatorsCRM.firstItemContactOnTable)).getText(),"Lan Tran");
-
-
-
+        
     }
 }
