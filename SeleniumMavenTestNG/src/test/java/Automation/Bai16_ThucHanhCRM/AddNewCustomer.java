@@ -91,13 +91,8 @@ public class AddNewCustomer extends BaseTest {
         WebUI.clickElement(LocatorsCRM.buttonGeneratePassword);
         WebUI.clickElement(LocatorsCRM.buttonShowPassword);
         String passValue = driver.findElement(By.xpath(LocatorsCRM.inputPasswordContact)).getAttribute("value");
-        System.out.println(passValue);
-        //WebUI.clickElement(LocatorsCRM.checkboxDoNotSendEmail);
-        //WebUI.clickElement(LocatorsCRM.buttonSaveContact);
-
         driver.findElement(By.xpath(LocatorsCRM.checkboxDoNotSendEmail)).click();
-        driver.findElement(By.xpath(LocatorsCRM.buttonSaveContact)).click();
-
+        WebUI.clickElement(LocatorsCRM.buttonSaveContact);
         sleep(2);
         Assert.assertTrue(driver.findElement(By.xpath(LocatorsCRM.firstItemContactOnTable)).isDisplayed());
         Assert.assertEquals(driver.findElement(By.xpath(LocatorsCRM.firstItemContactOnTable)).getText(),"Lan Tran");
