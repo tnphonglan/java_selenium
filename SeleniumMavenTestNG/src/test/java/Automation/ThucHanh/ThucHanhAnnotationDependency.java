@@ -1,6 +1,5 @@
 package Automation.ThucHanh;
 
-import Automation.common.BaseTest;
 import Automation.common.BaseTestDependency;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;

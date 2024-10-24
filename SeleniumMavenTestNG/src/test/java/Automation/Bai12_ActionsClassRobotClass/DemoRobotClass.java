@@ -5,13 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
 public class DemoRobotClass extends BaseTest {
     @Test

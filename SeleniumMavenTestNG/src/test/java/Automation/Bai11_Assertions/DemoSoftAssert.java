@@ -3,7 +3,6 @@ package Automation.Bai11_Assertions;
 import Automation.common.BaseTest;
 import Automation.common.LocatorsCRM;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 

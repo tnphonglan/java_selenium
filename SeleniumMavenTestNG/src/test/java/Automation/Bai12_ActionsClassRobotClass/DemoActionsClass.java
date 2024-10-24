@@ -7,8 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
-
 public class DemoActionsClass extends BaseTest {
 
     @Test
