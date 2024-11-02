@@ -1,4 +1,4 @@
-package Automation.Bai19_NavigationPage.testcase;
+package Automation.Bai20_21_ThucHanhPOM.testcase;
 
 import Automation.Bai20_21_ThucHanhPOM.pages.LoginPage;
 import Automation.common.BaseTest;

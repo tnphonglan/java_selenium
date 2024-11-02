@@ -1,4 +1,4 @@
-package TestCMS_System.Pages;
+package TestCMS_System.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +8,7 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-public class LoginPageCMS {
+public class LoginPage {
 
     private String url = "https://cms.anhtester.com/login";
 
@@ -17,7 +17,7 @@ public class LoginPageCMS {
     private WebDriverWait wait;
 
     //Hàm xây dựng để truyền driver từ bên ngoài vào (có thể từ BaseTest...)
-    public LoginPageCMS(WebDriver driver){
+    public LoginPage(WebDriver driver){
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
@@ -49,21 +49,23 @@ public class LoginPageCMS {
         System.out.println("Click on Login button: "+buttonLoginCMS);
     }
 
-    public void loginCMS(String email, String password) {
+    public DashboardPage login(String email, String password) {
         driver.get(url);
         System.out.println("Navigate to URL: "+url);
         setInputEmail(email);
         setInputPassword(password);
         clickButtonLogin();
+
+        return new DashboardPage(driver);
     }
 
-    public void verifyLoginSuccess_CMS(){
+    public void verifyLoginSuccess(){
         System.out.println("Verify Login Success");
         Assert.assertTrue(driver.findElement(By.xpath("//span[normalize-space()='Dashboard']")).isDisplayed(),"Menu Dashboard not displayed.");
 
     }
 
-    public void verifyLoginFail_CMS(){
+    public void verifyLoginFail(){
         System.out.println("Verify Login Fail");
         Assert.assertTrue(driver.findElement(errorMessageCMS).isDisplayed(),"Error message not displayed.");
         Assert.assertEquals(driver.findElement(errorMessageCMS).getText(),"Invalid login credentials", "Content of error message not match.");

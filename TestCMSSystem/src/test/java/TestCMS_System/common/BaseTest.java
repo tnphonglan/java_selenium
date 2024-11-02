@@ -1,12 +1,13 @@
-package TestCMS_System.Common;
+package TestCMS_System.common;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
 import java.time.Duration;
 
-public class BaseTestCMS {
+public class BaseTest {
 
     public static WebDriver driver;
 

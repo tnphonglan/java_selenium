@@ -1,4 +1,4 @@
-package Automation.keywords;
+package TestCMS_System.keywords;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
