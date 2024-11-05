@@ -61,13 +61,13 @@ public class CategoryPage {
         WebUI.clickElement(dropdownCategoryType);
         WebUI.clickElement(optionDigital);
         WebUI.clickElement(inputBanner);
-        WebUI.sleep(3);
-        WebUI.setText(inputSearchImageFile,"icon_ford1");
-        WebUI.sleep(3);
+        WebUI.sleep(2);
+        WebUI.setText(inputSearchImageFile,"hoa tuyết mai");
+        WebUI.sleep(1);
         WebUI.clickElement(firstItemSelectFile);
-        WebUI.sleep(3);
+        WebUI.sleep(1);
         WebUI.clickElement(buttonAddFiles);
-        WebUI.sleep(3);
+        WebUI.sleep(2);
     }
 
 
