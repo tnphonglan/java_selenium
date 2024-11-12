@@ -68,9 +68,11 @@ public class LoginPage {
         //driver.get(url);
         WebUI.openURL(url);
         //System.out.println("Navigate to URL: "+url);
+        WebUI.waitForPageLoaded();
         setInputEmail(email);
         setInputPassword(password);
         clickButtonLogin();
+        WebUI.waitForPageLoaded();
 
         return new DashboardPage(driver);
     }

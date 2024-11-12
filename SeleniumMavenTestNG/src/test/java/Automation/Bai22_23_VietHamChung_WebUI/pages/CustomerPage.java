@@ -51,7 +51,8 @@ public class CustomerPage {
 
     public void verifyRedirectCustomerPageSuccess(){
         Assert.assertTrue(driver.findElement(headerCustomerPage).isDisplayed(), "Không tìm thấy Customer header page");
-        Assert.assertEquals(driver.findElement(headerCustomerPage).getText(),"Customers Summary", "Giá trị header của Customer page không đúng");
+        //Assert.assertEquals(WebUI.getElementText(headerCustomerPage),"Customers Summary", "Giá trị header của Customer page không đúng");
+        WebUI.assertContains(WebUI.getElementText(headerCustomerPage),"Customers Summary", "Giá trị header của Customer page không đúng");
     }
 
     public void inputDataCustomer(String CompanyName){
@@ -62,7 +63,8 @@ public class CustomerPage {
         WebUI.clickElement(dropdownGroups);
         WebUI.setText(inputSearchGroup,"Gold");
         WebUI.sleep(1);
-        driver.findElement(inputSearchGroup).sendKeys(Keys.ENTER);
+        WebUI.setKey(dropdownGroups, Keys.ENTER);
+        //driver.findElement(inputSearchGroup).sendKeys(Keys.ENTER);
         WebUI.clickElement(dropdownGroups);
         WebUI.setText(inputAddress,"197 Trần Phú");
         WebUI.setText(inputCity,"HCM");
@@ -71,7 +73,8 @@ public class CustomerPage {
         WebUI.clickElement(dropdownCountry);
         WebUI.setText(inputSearchCountry,"Vietnam");
         WebUI.sleep(1);
-        driver.findElement(inputSearchCountry).sendKeys(Keys.ENTER);
+        WebUI.setKey(dropdownCountry, Keys.ENTER);
+        //driver.findElement(inputSearchCountry).sendKeys(Keys.ENTER);
         WebUI.clickElement(buttonSaveCustomer);
     }
 
