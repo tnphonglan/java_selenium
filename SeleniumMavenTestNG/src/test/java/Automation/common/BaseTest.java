@@ -50,21 +50,13 @@ public class BaseTest {
     }
 
     @BeforeMethod
-    public void  createBrowser(){
-        //Khởi tạo Browser
-        driver = new ChromeDriver();
-        //2 hàm chờ đợi
-        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        //Chờ đợi tối đa 1 trang load
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
-        //2 hàm để phóng to thu nhỏ trình duyệt
-        driver.manage().window().maximize();
-
-        //Khai báo class WebUI để khởi tạo giá trị driver cho class WebUI
-        new WebUI(driver); // kiểu khai báo anonymous (ẩn danh)
+    @Parameters({"browser"})
+    public void  createBrowser(String browserName){
+        setBrowser(browserName);
+        new WebUI(driver);
     }
 
-    public void  createBrowser(String browserName){
+    public void  setBrowser(String browserName){
 
         //Khởi tạo Browser
         if (browserName.trim().equalsIgnoreCase("chrome")){

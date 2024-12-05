@@ -80,6 +80,7 @@ public class LoginPage {
     public void verifyLoginSuccess(){
         System.out.println("Verify Login Success");
         Assert.assertTrue(driver.findElement(By.xpath(LocatorsCRM.menuDashboard)).isDisplayed(),"Menu Dashboard not displayed.");
+        Assert.assertEquals(driver.findElement(By.xpath(LocatorsCRM.menuDashboard)).getText(),"Dashboard", "Content of Menu Dashboard not match.");
 
     }
 
