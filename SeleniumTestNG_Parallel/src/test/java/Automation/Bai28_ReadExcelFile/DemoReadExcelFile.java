@@ -1,4 +1,4 @@
-package Automation.Bai28ReadExcelFile;
+package Automation.Bai28_ReadExcelFile;
 
 import Automation.helpers.ExcelHelper;
 import org.testng.annotations.Test;

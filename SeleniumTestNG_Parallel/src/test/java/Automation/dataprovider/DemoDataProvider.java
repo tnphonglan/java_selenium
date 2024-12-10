@@ -1,6 +1,6 @@
 package Automation.dataprovider;
 
-import Automation.Bai29DataProvider.DataProviderFactory;
+import Automation.Bai29_DataProvider.DataProviderFactory;
 import Automation.keywords.WebUI;
 import org.testng.annotations.Test;
 
