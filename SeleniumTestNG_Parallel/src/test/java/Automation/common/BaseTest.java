@@ -1,11 +1,13 @@
 package Automation.common;
 
 import Automation.drivers.DriverManager;
+import Automation.helpers.CaptureHelper;
 import Automation.helpers.PropertiesHelper;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
@@ -47,8 +49,15 @@ public class BaseTest {
     }
 
     @AfterMethod
-    public void closeBrowser() {
-        //Đóng Browser
+    public void closeBrowser(ITestResult iTestResult) {
+
+        //Chụp màn hình khi test case bị Fail, Pass không chụp
+        if (ITestResult.FAILURE == iTestResult.getStatus()) {
+            CaptureHelper.takeScreenshot(iTestResult.getName());
+        }
+        //Stop record video
+        CaptureHelper.stopRecord();
+
         DriverManager.quit();
     }
 }
