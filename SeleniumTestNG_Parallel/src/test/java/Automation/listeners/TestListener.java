@@ -9,59 +9,49 @@ import org.testng.ITestResult;
 public class TestListener implements ITestListener {
 
     @Override
-    public void onStart(ITestContext arg0) {
-        // TODO Auto-generated method stub
-        System.out.println("onStart");
+    public void onStart(ITestContext result) {
         PropertiesHelper.loadAllFiles();
 
     }
 
     @Override
-    public void onFinish(ITestContext arg0) {
-        // TODO Auto-generated method stub
-        System.out.println("onFinish");
+    public void onFinish(ITestContext result) {
 
     }
 
     @Override
-    public void onTestStart(ITestResult arg0) {
-        // TODO Auto-generated method stub
-        System.out.println("onTestStart: " + arg0.getName());
-        CaptureHelper.startRecord(arg0.getName());
+    public void onTestStart(ITestResult result) {
+        System.out.println("onTestStart: " + result.getName());
+        CaptureHelper.startRecord(result.getName());
 
     }
 
     @Override
-    public void onTestSuccess(ITestResult arg0) {
-        // TODO Auto-generated method stub
-        System.out.println("onTestSuccess: " + arg0.getName());
+    public void onTestSuccess(ITestResult result) {
+        System.out.println("onTestSuccess: " + result.getName());
+        CaptureHelper.stopRecord();
+
+    }
+
+    @Override
+    public void onTestFailure(ITestResult result) {
+        System.out.println("onTestFailure: " + result.getName());
+        CaptureHelper.takeScreenshot(result.getName());
 
         CaptureHelper.stopRecord();
 
     }
 
     @Override
-    public void onTestFailure(ITestResult arg0) {
-        // TODO Auto-generated method stub
-        System.out.println("onTestFailure: " + arg0.getName());
-        CaptureHelper.takeScreenshot(arg0.getName());
-
-        CaptureHelper.stopRecord();
-
-    }
-
-    @Override
-    public void onTestSkipped(ITestResult arg0) {
-        // TODO Auto-generated method stub
-        System.out.println("onTestSkipped: " + arg0.getName());
+    public void onTestSkipped(ITestResult result) {
+        System.out.println("onTestSkipped: " + result.getName());
 
         CaptureHelper.stopRecord();
     }
 
     @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult arg0) {
-        // TODO Auto-generated method stub
-        System.out.println("onTestFailedButWithinSuccessPercentage");
+    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+        System.out.println("onTestFailedButWithinSuccessPercentage" + result.getName());
 
     }
 }
