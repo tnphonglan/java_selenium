@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Regression Test" verbose="1" parallel="tests">
+    <test name="Login Test CRM Chrome" parallel="methods">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="Automation.Bai31_TestListener.testcase.LoginTest"/>
+        </classes>
+    </test>
+    <test name="Login Test CRM Firefox" parallel="methods">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="Automation.Bai31_TestListener.testcase.CustomerTest"/>
+        </classes>
+    </test>
+    <test name="Login Test CRM Edge" parallel="methods">
+        <parameter name="browser" value="edge"></parameter>
+        <classes>
+            <class name="Automation.Bai31_TestListener.testcase.DashboardTest"/>
+        </classes>
+    </test>
+</suite>
