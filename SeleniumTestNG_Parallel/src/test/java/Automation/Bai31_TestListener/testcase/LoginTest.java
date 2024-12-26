@@ -43,6 +43,5 @@ public class LoginTest extends BaseTest {
         loginPage = new LoginPage();
         loginPage.loginCRM("admin@example.com", "12345678");
         loginPage.verifyLoginFail();
-
     }
 }

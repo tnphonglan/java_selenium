@@ -2,6 +2,7 @@ package Automation.listeners;
 
 import Automation.helpers.CaptureHelper;
 import Automation.helpers.PropertiesHelper;
+import Automation.reports.AllureReportManager;
 import Automation.reports.ExtentReportManager;
 import Automation.reports.ExtentTestManager;
 import Automation.utils.LogUtils;
@@ -59,11 +60,15 @@ public class TestListener implements ITestListener {
         LogUtils.error("==>" + result.getName() + " is Fail");
         CaptureHelper.takeScreenshot(result.getName());
         CaptureHelper.stopRecord();
+
         //Extent Report
         ExtentTestManager.addScreenshot(result.getName());
         ExtentTestManager.logMessage(Status.FAIL, result.getThrowable().toString());
         ExtentTestManager.logMessage(Status.FAIL, result.getName() + " is failed.");
 
+        //Allure Report
+        AllureReportManager.saveTextLog(result.getName() + " is failed.");
+        AllureReportManager.saveScreenshotPNG();
     }
 
     @Override

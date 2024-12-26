@@ -13,7 +13,7 @@ public class CustomerTest extends BaseTest {
     DashboardPage dashboardPage;
     CustomerPage customerPage;
 
-    private String CUSTOMER_NAME = "Vietmap 01";
+    private String CUSTOMER_NAME = "Vietmap A1";
 
     @Test
     public void testAddNewCustomer() {

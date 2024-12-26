@@ -1,9 +1,11 @@
 package Automation.keywords;
 
 import Automation.drivers.DriverManager;
+import Automation.reports.AllureReportManager;
 import Automation.reports.ExtentTestManager;
 import Automation.utils.LogUtils;
 import com.aventstack.extentreports.Status;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -54,6 +56,7 @@ public class WebUI {
         }
     }
 
+    @Step("Navigate to URL: {0}")
     public static void openURL(String url) {
         DriverManager.getDriver().get(url);
         sleep(STEP_TIME);
@@ -61,6 +64,7 @@ public class WebUI {
         ExtentTestManager.logMessage(Status.PASS, "Navigate to URL: " + url);
     }
 
+    @Step("Click on element: {0}")
     public static void clickElement(String by) {
         waitForElementVisible(By.xpath(by));
         highLightElement(By.xpath(by));
@@ -70,6 +74,7 @@ public class WebUI {
         ExtentTestManager.logMessage(Status.PASS, "Click on element " + by);
     }
 
+    @Step("Set text {1} on element {0}")
     public static void setText(String by, String value) {
         waitForElementVisible(By.xpath(by));
         highLightElement(By.xpath(by));
@@ -79,6 +84,7 @@ public class WebUI {
         ExtentTestManager.logMessage(Status.PASS, "Set text " + value + " on element " + by);
     }
 
+    @Step("Click on element: {0}")
     public static void clickElement(By by) {
         waitForElementVisible(by);
         highLightElement(by);
@@ -88,6 +94,7 @@ public class WebUI {
         ExtentTestManager.logMessage(Status.PASS, "Click on element " + by);
     }
 
+    @Step("Click on element: {0} with timeout {1}")
     public static void clickElement(By by, int timeout) {
         waitForElementVisible(by, timeout);
         highLightElement(by);
@@ -97,6 +104,7 @@ public class WebUI {
         ExtentTestManager.logMessage(Status.PASS, "Click on element " + by);
     }
 
+    @Step("Set text {1} on element {0}")
     public static void setText(By by, String value) {
         waitForElementVisible(by);
         highLightElement(by);
@@ -106,13 +114,17 @@ public class WebUI {
         ExtentTestManager.logMessage(Status.PASS, "Set text " + value + " on element " + by);
     }
 
+    @Step("Get text of element: {0}")
     public static String getElementText(By by) {
         waitForElementVisible(by);
         sleep(STEP_TIME);
         String text = DriverManager.getDriver().findElement(by).getText();
-        LogUtils.info("Get text: " + text);
+        LogUtils.info("Get text of element: " + by + "==>" + text);
         ExtentTestManager.logMessage(Status.PASS, "Get text of element " + by);
         ExtentTestManager.logMessage(Status.INFO, "==> Text: " + getWebElement(by).getText());
+
+        AllureReportManager.saveTextLog("==> " + text);
+
         return text;
     }
 
