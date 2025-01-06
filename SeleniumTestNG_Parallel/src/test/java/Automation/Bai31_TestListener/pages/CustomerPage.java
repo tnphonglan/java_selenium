@@ -3,8 +3,12 @@ package Automation.Bai31_TestListener.pages;
 import Automation.drivers.DriverManager;
 import Automation.keywords.WebUI;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+
+import java.util.List;
 
 public class CustomerPage {
 
@@ -38,6 +42,7 @@ public class CustomerPage {
     private By inputSearchCountry = By.xpath("//div[@app-field-wrapper='country']//input");
     private By buttonSaveAndCreateContact = By.xpath("//button[normalize-space()='Save and create contact']");
     private By buttonSaveCustomer = By.xpath("//div[@id='profile-save-section']//button[normalize-space()='Save']");
+    private By pageTotal = By.xpath("//div[@id='clients_info']");
 
     public void clickButtonAddnew() {
         WebUI.clickElement(buttonAddNewCustomers);
@@ -77,5 +82,42 @@ public class CustomerPage {
         WebUI.sleep(2);
         WebUI.clickElement(firstItemCustomerOnTable);
         return new ProfilePage();
+    }
+
+    public void searchCusromer2(String CompanyName) {
+        WebUI.setText(buttonSearchCustomers, CompanyName);
+        WebUI.sleep(2);
+        WebUI.waitForPageLoaded();
+    }
+
+    public void checkPageTotal(int total) {
+        String pageTotalText = WebUI.getElementText(pageTotal);
+        System.out.println(pageTotalText);
+        //Showing 1 to 4 of 4 entries (filtered from 283 total entries)
+        String pageTotalNumber = pageTotalText.split(" ")[3];
+        System.out.println("Check Page Total: " + pageTotalNumber);
+
+        Assert.assertEquals(Integer.parseInt(pageTotalNumber), total, "The page not match.");
+    }
+
+    public void checkSearchTableByColumn(int column, String value) {
+
+        //Xác định số dòng của table sau khi search
+        List<WebElement> row = DriverManager.getDriver().findElements(By.xpath("//table//tbody/tr"));
+        int rowTotal = row.size(); //Lấy ra số dòng
+        System.out.println("Số dòng tìm thấy: " + rowTotal);
+
+        //Duyệt từng dòng
+        for (int i = 1; i <= rowTotal; i++) {
+            WebElement elementCheck = DriverManager.getDriver().findElement(By.xpath("//table//tbody/tr[" + i + "]/td[" + column + "]"));
+
+            JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
+            js.executeScript("arguments[0].scrollIntoView(false);", elementCheck);
+
+            System.out.print(value + " - ");
+            System.out.println(elementCheck.getText());
+            Assert.assertTrue(elementCheck.getText().toUpperCase().contains(value.toUpperCase()), "Dòng số " + i + " không chứa giá trị tìm kiếm.");
+        }
+
     }
 }
